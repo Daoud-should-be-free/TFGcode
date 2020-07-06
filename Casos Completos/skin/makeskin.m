@@ -1,0 +1,9 @@
+savestr='skin/data';
+rng(4267);
+total_data=randn(1500,5);
+total_data=total_data*0.5+randi([-2,2],1,5);
+peel=total_data(:,1).*total_data(:,2)+...
+     3*total_data(:,4)+4*total_data(:,3)...
+    +2*total_data(:,5);%+0.5*randn(size(total_data,1),1);
+total_data=[total_data,peel];
+save(savestr,'total_data');
